@@ -2,6 +2,9 @@
   "name": "mean-contactlist-angular2",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "9.3.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -13,7 +16,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "1.0.2",
+    "@angular/cli": "^1.6.5",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
