@@ -16,7 +16,6 @@ app.use(express.static(distDir));
 var db;
 
 // Connect to the database before starting the application server.
-console.log('hey');
 mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   if (err) {
     console.log(err);
