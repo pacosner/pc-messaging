@@ -5,6 +5,9 @@ var ObjectID = mongodb.ObjectID;
 
 var CONTACTS_COLLECTION = "contacts";
 
+var MESSAGES_COLLECTION = "messages";
+
+
 var app = express();
 app.use(bodyParser.json());
 
@@ -108,6 +111,22 @@ app.delete("/api/contacts/:id", function(req, res) {
       handleError(res, err.message, "Failed to delete contact");
     } else {
       res.status(200).json(req.params.id);
+    }
+  });
+});
+
+
+/*  "/api/messages"
+ *    GET: finds all messages
+ *    POST: creates a new message
+ */
+
+app.get("/api/messages", function(req, res) {
+  db.collection(MESSAGES_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get messages.");
+    } else {
+      res.status(200).json(docs);
     }
   });
 });
