@@ -9,8 +9,8 @@ import { ContactListComponent } from './contacts/contact-list/contact-list.compo
 import { MessagesComponent } from './messages/messages.component';
 import { SendMessageComponent } from './messages/send-message/send-message.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { NgbdModalContent } from './messages/send-message/send-message.component'
-
+import { NgbdModalContent } from './messages/send-message/send-message.component';
+import { MessageService } from './messages/message.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { NgbdModalContent } from './messages/send-message/send-message.component
     NgbModule.forRoot()
   ],
   entryComponents: [NgbdModalContent],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 export class Message {
     _id?: string;
-    arrived: string;
+    timeStamp: Date;
     from: string;
     to: string;
   }
