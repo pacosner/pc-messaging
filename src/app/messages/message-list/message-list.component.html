@@ -1,5 +1,14 @@
+<div class="container">
+      <div class="form-group row col-sm-6">
+        <label for="smFormGroupInput" class="col-sm-2 col-form-label col-form-label-sm">Subject</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="filterParam" class="form-control form-control-sm" id="smFormGroupInput">
+        </div>
+      </div>
+</div>
+
 <div class="container" style="max-height: 400px; overflow-y: scroll">
-  <div class="row border message"  [class.active]="message === selectedMessage" *ngFor="let message of visibleMessages" (click)="selectMessage(message)">
+  <div class="row border message" [class.active]="message === selectedMessage" *ngFor="let message of visibleMessages | messageSearch: filterParam" (click)="selectMessage(message)">
     <div class="col-sm-4">
       {{message.to}}
     </div>

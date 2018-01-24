@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { GlobalVariable } from '../globals';
 
 @Component({
   selector: 'app-box-selector',
@@ -7,12 +8,19 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   div {
     cursor: pointer;
   }
-  .selected {
-    color: red;
+  .active {
+    background-color: #009;
+    color: #fff;
+  }
+
+  .list-group {
+    font-size: 14px;
   }
   `],
 })
 export class BoxSelectorComponent implements OnInit {
+
+  public testUser = GlobalVariable.TEST_USER;
 
   @Input() currentMailBox: string;
   @Output() currentMailBoxChange = new EventEmitter();

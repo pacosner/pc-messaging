@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Message } from './message';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { GlobalVariable } from '../globals';
 
 @Injectable()
 export class MessageService {
@@ -20,15 +21,13 @@ export class MessageService {
     // post("/api/Messages")
     createMessage(newMessage: Message): Promise<void | Message> {
 
-      newMessage.from = 'tester@pcmail.com';
+      newMessage.from = GlobalVariable.TEST_USER;
 
       return this.http.post(this.MessagesUrl, newMessage)
                  .toPromise()
                  .then(response => response.json() as Message)
                  .catch(this.handleError);
     }
-
-    // get("/api/Messages/:id") endpoint not used by Angular app
 
     // delete("/api/Messages/:id")
     deleteMessage(delMessageId: String): Promise<void | String> {

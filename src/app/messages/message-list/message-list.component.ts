@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import {MessageService} from '../message.service';
-import {Message} from '../message';
+import { MessageService } from '../message.service';
+import { Message } from '../message';
 import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
-import { TruncatePipe} from '../../truncate.pipe';
+import { TruncatePipe } from '../../truncate.pipe';
+import { MessageSearchPipe } from '../../message-search.pipe';
 
 @Component({
   selector: 'app-message-list',
@@ -17,6 +18,8 @@ export class MessageListComponent implements OnInit, OnChanges {
 
   @Input() currentMailBox: string;
 
+  filterParam: string = '';
+
   constructor(private messageService: MessageService) { }
 
   selectMessage(message: Message) {
@@ -28,6 +31,8 @@ export class MessageListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+
+    this.selectedMessage = null;
     
     if( changes['currentMailBox'] && changes['currentMailBox'].previousValue != changes['currentMailBox'].currentValue ) {
       if (changes['currentMailBox'].currentValue === 'in') {

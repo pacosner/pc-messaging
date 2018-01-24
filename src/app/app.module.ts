@@ -13,6 +13,7 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
 import { BoxSelectorComponent } from './box-selector/box-selector.component';
 import { TruncatePipe } from './truncate.pipe';
 import { MessageDetailsComponent } from './messages/message-details/message-details.component';
+import { MessageSearchPipe } from './message-search.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MessageDetailsComponent } from './messages/message-details/message-deta
     MessageListComponent,
     BoxSelectorComponent,
     TruncatePipe,
-    MessageDetailsComponent
+    MessageDetailsComponent,
+    MessageSearchPipe
   ],
   imports: [
     BrowserModule,

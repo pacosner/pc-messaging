@@ -1,4 +1,14 @@
-<div><b>tester@pcmail.com</b></div>
-<div [class.selected]="currentMailBox === 'contacts'" (click)="changeMailBox('contacts')">Contacts</div>
-<div [class.selected]="currentMailBox === 'in'" (click)="changeMailBox('in')">Inbox</div>
-<div [class.selected]="currentMailBox === 'out'" (click)="changeMailBox('out')">Sent Mail</div>
+<div><b>{{testUser}}</b></div>
+<!-- <app-send-message></app-send-message> -->
+
+<ul class="nav flex-column">
+    <li class="nav-item">
+        <app-send-message></app-send-message>
+    </li>
+    <li class="nav-item">
+      <a [class.active]="currentMailBox === 'in'" class="nav-link" (click)="changeMailBox('in')" href="#">Inbox</a>
+    </li>
+    <li class="nav-item">
+        <a [class.active]="currentMailBox === 'out'" class="nav-link" (click)="changeMailBox('out')" href="#">Sent Mail</a>
+    </li>
+</ul>
