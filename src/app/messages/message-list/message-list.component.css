@@ -1,0 +1,16 @@
+.container {
+    font-size: 14px;;
+}
+
+.message {
+    cursor: pointer;
+}
+
+.active {
+    color: #fff;
+    background-color: #009;
+}
+
+.details {
+    margin-top: 15px;
+}

@@ -62,10 +62,6 @@ app.post("/api/messages", function(req, res) {
   var newmessage= req.body;
   newmessage.createDate = new Date();
 
-  if (!req.body.name) {
-    handleError(res, "Invalid user input", "Must provide a name.", 400);
-  }
-
   db.collection(messageS_COLLECTION).insertOne(newmessage, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new message.");

@@ -1,0 +1,22 @@
+<div class="container" style="max-height: 400px; overflow-y: scroll">
+  <div class="row border message"  [class.active]="message === selectedMessage" *ngFor="let message of visibleMessages" (click)="selectMessage(message)">
+    <div class="col-sm-4">
+      {{message.to}}
+    </div>
+    <div class="col-sm-4">
+      {{message.subject}} - <span style="color: #ccc">{{message.body | truncate:[20]}}</span>
+    </div>
+    <div class="col-sm-3">
+      {{message.createDate | date: 'medium'}}
+    </div>
+    <div class="col-sm-1">
+      <i (click)="deleteMessage(message._id)" class="fa fa-trash-o" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedMessage" class="container details">
+  <div class="row border message">
+    <app-message-details [selectedMessage]="selectedMessage"></app-message-details>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<div><b>tester@pcmail.com</b></div>
+<div [class.selected]="currentMailBox === 'contacts'" (click)="changeMailBox('contacts')">Contacts</div>
+<div [class.selected]="currentMailBox === 'in'" (click)="changeMailBox('in')">Inbox</div>
+<div [class.selected]="currentMailBox === 'out'" (click)="changeMailBox('out')">Sent Mail</div>

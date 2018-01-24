@@ -19,6 +19,9 @@ export class MessageService {
 
     // post("/api/Messages")
     createMessage(newMessage: Message): Promise<void | Message> {
+
+      newMessage.from = 'tester@pcmail.com';
+
       return this.http.post(this.MessagesUrl, newMessage)
                  .toPromise()
                  .then(response => response.json() as Message)
@@ -32,15 +35,6 @@ export class MessageService {
       return this.http.delete(this.MessagesUrl + '/' + delMessageId)
                  .toPromise()
                  .then(response => response.json() as String)
-                 .catch(this.handleError);
-    }
-
-    // put("/api/Messages/:id")
-    updateMessage(putMessage: Message): Promise<void | Message> {
-      var putUrl = this.MessagesUrl + '/' + putMessage._id;
-      return this.http.put(putUrl, putMessage)
-                 .toPromise()
-                 .then(response => response.json() as Message)
                  .catch(this.handleError);
     }
 
