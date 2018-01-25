@@ -3,4 +3,5 @@ export class Message {
     from: string;
     to: string;
     subject: string;
+    body: string;
   }

@@ -12,6 +12,9 @@ import { MessageSearchPipe } from '../../message-search.pipe';
 })
 export class MessageListComponent implements OnInit, OnChanges {
 
+
+  message:string;
+
   messages: Message[];
   selectedMessage: Message;
   visibleMessages: Message[];
@@ -62,6 +65,7 @@ export class MessageListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+
     this.messageService
      .getMessages()
      .then((messages: Message[]) => {

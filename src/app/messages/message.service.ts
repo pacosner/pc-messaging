@@ -11,7 +11,7 @@ export class MessageService {
     constructor (private http: Http) {}
 
     // get("/api/Messages")
-    getMessages(): Promise<void | Message[]> {
+     getMessages(): Promise<void | Message[]> {
       return this.http.get(this.MessagesUrl)
                  .toPromise()
                  .then(response => response.json() as Message[])

@@ -32,28 +32,11 @@ export class MessagesComponent implements OnInit {
 
   @Output() onMakeActive: EventEmitter<any> = new EventEmitter<any>();
 
-  /*
-  makeActive(message) {
-    this.allMessages.map(function(am) {
-      am.active = false;
-    })
-    message.active = true;
-    this.onMakeActive.emit(message);
-  }
-  */
-
   allMessages: Array<Message>;
 
   constructor() { }
 
   ngOnInit() {
-    /*
-    this.messageDataService.getAllMessages().subscribe(
-      (messages) => {
-        this.allMessages = messages;
-      }
-    )
-    */
   }
 
 }
