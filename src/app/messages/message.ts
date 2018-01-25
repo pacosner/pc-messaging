@@ -4,4 +4,5 @@ export class Message {
     to: string;
     subject: string;
     body: string;
+    createDate: Date;
   }

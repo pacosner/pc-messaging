@@ -69,7 +69,7 @@ export class MessageListComponent implements OnInit, OnChanges {
     this.messageService
      .getMessages()
      .then((messages: Message[]) => {
-       this.messages = messages;
+       this.messages = messages.sort((a, b) => a.createDate > b.createDate ? -1 : a.createDate < b.createDate ? 1 : 0);
        this.visibleMessages = Object.assign(this.messages);
      });
  }
